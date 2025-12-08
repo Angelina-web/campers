@@ -1,13 +1,22 @@
-import Link from 'next/link';
+import Link from "next/link";
+import css from "./NotFound.module.css";
 
-const NotFound = () => {
+export default function NotFound() {
   return (
-    <div>
-      <h1>404 - Page Not Found</h1>
-      <p>Sorry, the page you&#39;re looking for doesn&#39;t exist.</p>
-      <Link href="/">Go back home</Link>
+    <div className={css.wrapper}>
+      <h1 className={css.code}>404</h1>
+
+      <h2 className={css.title}>Сторінку не знайдено</h2>
+
+      <p className={css.text}>
+        Вибач, але сторінки, яку ти шукаєш, не існує або вона була переміщена.
+      </p>
+
+      <Link href="/" className={css.button}>
+        Повернутися на головну
+      </Link>
+
+      <p className={css.hint}>Можливо, допоможе пошук або меню навігації.</p>
     </div>
   );
-};
-
-export default NotFound;
+}

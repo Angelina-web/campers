@@ -40,7 +40,7 @@ export default function CamperDetailsClient({ id }: Props) {
 
           <div className={css.elementRating}>
             <svg className={css.star}>
-              <use href="/icons.svg#icon-star" />
+              <use href="/symbol-defs.svg#icon-star" />
             </svg>
             <p className={css.elementText}>{camper.rating}</p>
 
@@ -51,7 +51,7 @@ export default function CamperDetailsClient({ id }: Props) {
 
             <div className={css.elementMap}>
               <svg className={css.elementIcon}>
-                <use href="/icons.svg#icon-map" />
+                <use href="/symbol-defs.svg#icon-map" />
               </svg>
               <p className={css.elementText}>{camper.location}</p>
             </div>

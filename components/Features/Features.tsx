@@ -38,7 +38,7 @@ export default function Features({ camper, activeTab }: FeaturesProps) {
           .map((f) => (
             <div key={f.key} className={css.featuresElements}>
               <svg width={20} height={20} className={css.featuresIcons}>
-                <use href={`/icons.svg#${icons[f.key]}`} />
+                <use href={`/symbol-defs.svg#${icons[f.key]}`} />
               </svg>
               <p className={css.featuresLabel}>{f.label}</p>
             </div>

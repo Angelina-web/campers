@@ -36,23 +36,22 @@ export interface Review {
   comment: string;
 }
 
-export type EquipmentKey = "AC" | "automatic" | "kitchen" | "TV" | "bathroom";
+export type Equipment = {
+  type:
+    | "AC"
+    | "bathroom"
+    | "kitchen"
+    | "TV"
+    | "radio"
+    | "refrigerator"
+    | "microwave"
+    | "gas"
+    | "water";
+  engine: "petrol" | "diesel" | "hybrid";
+  transmission: "automatic" | "manual";
+};
 
-export interface PaginatedResponse<T> {
-  items: T[];
-  total: number;
-  page: number;
-  limit: number;
-  hasMore: boolean;
-}
-
-export interface CamperDetailsPageProps {
-  id: string;
-}
-
-export interface CampersApiResponse {
-  total: number;
-  items: Camper[];
-}
-
-export type CamperApiResponse = Camper[] | { items: Camper[] };
+export type FilterOptions = {
+  equipment: "AC" | "bathroom" | "kitchen" | "TV" | "automatic" | "manual";
+  type: "panelTruck" | "FullyIntegrated" | "Alcove";
+};

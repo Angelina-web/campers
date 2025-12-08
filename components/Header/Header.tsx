@@ -1,3 +1,4 @@
+"use client"
 import css from "./Header.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -5,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   return (
-    <div className="container">
+    <div className=".container">
       <header className={css.header}>
         <Link href="/" aria-label="Home" className={css.logoLink}>
           <svg width="136" height="16" aria-hidden="true">

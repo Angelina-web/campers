@@ -1,0 +1,119 @@
+.camperCard {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+min-height: 368px;
+  background: #fff;
+}
+.camperImage {
+  border-radius: 10px;
+  overflow: hidden;
+object-fit: cover;
+}
+.camperContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: start;
+}
+.infoTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+}
+.fauvoriteButton {
+  cursor: pointer;
+}
+.fauvoriteIcon {
+  fill: #101828;
+}
+.iconActive {
+  fill: #e44848;
+}
+.elementRating {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.star {
+  fill: var(--rating);
+  border: 1.2px solid var(--rating);
+  width: 15px;
+  height: 15px;
+}
+.elementText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.elementIcon {
+  width: 15px;
+  height: 15px;
+  fill: var(--main);
+}
+
+.elementMap {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}
+.featuresElementsCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.featuresElements {
+  border-radius: 100px;
+  padding: 12px 18px;
+  width: auto;
+  background: var(--badges);
+}
+.featuresIcons {
+  fill: var(--main);
+}
+.featuresLabel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+.viewButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 166px;
+  height: 56px;
+  background: #e44848;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.viewButton:hover,
+.viewButton:focus {
+  background-color: var(--button-hover);
+}

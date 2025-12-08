@@ -1,15 +1,14 @@
 .heroSection {
   margin: 0 auto;
+  height: 100vh;
   background-image: url(/img/picture.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-.cont {
   display: flex;
-  flex-direction: column;
-  max-width: 572px
+  align-items: center;
 }
+
 .mainText {
   font-weight: 600;
   font-size: 48px;
@@ -21,7 +20,6 @@
   font-size: 24px;
   line-height: 1.3;
   color: var(--inputs);
-  padding-top: 16px;
   padding-bottom: 40px;
 }
 .btn {
@@ -35,11 +33,12 @@
   letter-spacing: -0.01em;
   color: var(--white);
   cursor: pointer;
+  max-width: 173px;
+  text-align: center;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover,
 .btn:focus {
-  transform: scale(1.1);
   background-color: var(--button-hover);
 }

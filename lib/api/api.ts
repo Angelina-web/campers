@@ -1,16 +1,32 @@
 import axios from "axios";
 import { Camper } from "@/types/camper";
-import { CamperQueryParams, FetchCampersParams } from "@/types/filters";
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
-export const nextServer = axios.create({
-  baseURL,
-  withCredentials: true,
-});
+export const getCampers = async (
+  page: number,
+  filters: {
+    location: string;
+    equipment: string[];
+    transmission: string;
+    form: string;
+  }
+) => {
+  const params: Record<string, string | number | boolean> = {
+    page,
+    limit: 4,
+  };
 
-export const getCampers = async () => {
-  const { data } = await axios.get<Camper[]>("/campers");
+  if (filters.location) params.location = filters.location;
+  if (filters.transmission) params.transmission = filters.transmission;
+  if (filters.form)
+    params.form = filters.form.toLowerCase().replace(/\s+/g, "");
+
+  filters.equipment.forEach((eq) => {
+    params[eq] = true;
+  });
+
+  const { data } = await axios.get<Camper[]>("/campers", { params });
   return data;
 };
 
