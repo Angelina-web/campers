@@ -1,4 +1,4 @@
-import { getCamperById } from "@/lib/api";
+import { getCamperById } from "@/lib/api/api";
 import {
   QueryClient,
   HydrationBoundary,

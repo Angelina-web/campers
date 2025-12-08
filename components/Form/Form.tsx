@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Formik, Form, FormikHelpers } from "formik";
 import { toast, ToastContainer } from "react-toastify";
 import * as Yup from "yup";
+import css from "./Form.module.css";
 
 export default function BookingForm() {
   const initialValues = {
@@ -22,14 +23,16 @@ export default function BookingForm() {
     formikHelpers: FormikHelpers<typeof initialValues>
   ) => {
     console.log(values);
-    toast.success("Booking submitted!");
+    toast.success("Booking success!");
     formikHelpers.resetForm();
   };
 
   return (
-    <div>
-      <h3>Book your campervan now</h3>
-      <p>Stay connected! We are always ready to help you.</p>
+    <div className={css.formContainer}>
+      <h3 className={css.formTitle}>Book your campervan now</h3>
+      <p className={css.formText}>
+        Stay connected! We are always ready to help you.
+      </p>
 
       <Formik
         initialValues={initialValues}
@@ -37,22 +40,48 @@ export default function BookingForm() {
         onSubmit={onSubmit}
       >
         <Form>
-          <Field name="name" placeholder="Name*" />
-          <ErrorMessage name="name" component="div" />
+          <Field name="name" placeholder="Name*" className={css.formElement} />
+          <ErrorMessage
+            name="name"
+            render={(error) => <div className={css.error}>{error}</div>}
+          />
 
-          <Field name="email" type="email" placeholder="Email*" />
-          <ErrorMessage name="email" component="div" />
+          <Field
+            name="email"
+            type="email"
+            placeholder="Email*"
+            className={css.formElement}
+          />
+          <ErrorMessage
+            name="email"
+            render={(error) => <div className={css.error}>{error}</div>}
+          />
 
-          <Field name="bookingDate" type="date" placeholder="Booking date*" />
-          <ErrorMessage name="bookingDate" component="div" />
+          <Field
+            name="bookingDate"
+            type="date"
+            placeholder="Booking date*"
+            className={css.formElement}
+          />
+          <ErrorMessage
+            name="bookingDate"
+            render={(error) => <div className={css.error}>{error}</div>}
+          />
 
-          <Field name="comment" as="textarea" placeholder="Comment" />
+          <Field
+            name="comment"
+            as="textarea"
+            placeholder="Comment"
+            className={css.formTextArea}
+          />
 
-          <button type="submit">Send</button>
+          <button type="submit" className={css.formBtn}>
+            Send
+          </button>
         </Form>
       </Formik>
 
-      <ToastContainer position="top-center" autoClose={2000} />
+      <ToastContainer position="top-center" autoClose={2500} />
     </div>
   );
 }

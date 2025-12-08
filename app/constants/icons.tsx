@@ -8,7 +8,6 @@ export const icons: { [key: string]: string } = {
   gas: "icon-gas",
   water: "icon-water",
   automatic: "icon-automatic",
-
   panelTruck: "icon-grid-1x2",
   fullyIntegrated: "icon-grid",
   alcove: "icon-grid-3x3-gap",

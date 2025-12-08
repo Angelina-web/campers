@@ -1,0 +1,64 @@
+.reviewContainer {
+  width: 100%;
+}
+.reviewElement {
+max-width: 631px;
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 44px;
+}
+.review {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.reviewPhoto {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--badges);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--button);
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviewNameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: start;
+}
+.reviewName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.reviewRating {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.reviewText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.star {
+    width: 16px;
+    height: 16px;
+}
+
+.starFilled {
+    fill: var(--rating);
+}
+
+.starEmpty {
+    fill: var(--badges);
+}

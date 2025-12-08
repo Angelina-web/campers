@@ -1,0 +1,60 @@
+.formContainer{
+border: 1px solid var(--gray-light);
+border-radius: 10px;
+padding: 44px;
+width: 641px;
+}
+.formTitle{
+font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+}
+.formText{
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+color: var(--gray);
+padding-top: 8px;
+padding-bottom: 24px;
+}
+.formElement{
+border-radius: 12px;
+padding: 18px;
+width: 100%;
+max-width: 527px;
+background: var(--inputs);
+padding-bottom: 14px;
+}
+.formTextArea{
+border-radius: 10px;
+padding: 18px;
+width: 100%;
+max-width: 527px;
+height: 118px;
+background: var(--inputs);
+padding-bottom: 24px;
+resize: none;
+}
+.formBtn{
+border-radius: 200px;
+padding: 16px 60px;
+background: var(--button);
+cursor: pointer;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: -0.01em;
+color: var(--white);
+transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formBtn:hover,
+.formBtn:focus {
+    transform: scale(1.1);
+    background-color: var(--button-hover);
+}
+.error {
+    color: red;
+    font-size: 12px;
+}

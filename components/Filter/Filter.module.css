@@ -1,0 +1,116 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+}
+.locationFilter {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.locationText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.input {
+  border-radius: 12px;
+  padding: 18px 218px 18px 20px;
+  background: var(--inputs);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+.elementIcon {
+  fill: var(--main);
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.filterText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+.filterTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-light);
+  margin: 24px 0;
+}
+.equipmentContainer {
+  display: flex;
+  flex-direction: row;
+  row-gap: 12px;
+  column-gap: 8px;
+  flex-wrap: nowrap;
+  justify-content: right;
+  align-items: center;
+}
+.filterElementBox {
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  width: 112px;
+  height: 96px;
+  mix-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.filterElementBoxActive{
+border: 1px solid var(--button);
+}
+.filterElementIcon {
+  fill: var(--main);
+  width: 32px;
+  height: 32px;
+}
+.filterElementText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+.secondLine {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-light);
+  margin: 80px 0 24px 0;
+}
+.filterBtn {
+  border-radius: 200px;
+  padding: 16px 60px;
+  background: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filterBtn:hover,
+.filterBtn:focus {
+  transform: scale(1.1);
+  background-color: var(--button-hover);
+}

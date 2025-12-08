@@ -1,5 +1,5 @@
 "use client";
-import { getCampers } from "@/lib/api";
+import { getCampers } from "@/lib/api/api";
 import { Camper } from "@/types/camper";
 import { useEffect, useState } from "react";
 import CamperList from "@/components/CamperList/CamperList";

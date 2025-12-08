@@ -1,5 +1,6 @@
 import { Camper } from "@/types/camper";
 import { icons } from "@/app/constants/icons";
+import css from "./Features.module.css";
 
 type FeaturesProps = {
   camper: Camper;
@@ -9,7 +10,7 @@ type FeaturesProps = {
 export default function Features({ camper, activeTab }: FeaturesProps) {
   if (activeTab !== "features") return null;
 
-  const booleanFeatures = [
+  const booleanFeatures: { key: keyof Camper; label: string }[] = [
     { key: "AC", label: "Air Conditioning" },
     { key: "TV", label: "TV" },
     { key: "kitchen", label: "Kitchen" },
@@ -18,7 +19,7 @@ export default function Features({ camper, activeTab }: FeaturesProps) {
     { key: "microwave", label: "Microwave" },
     { key: "gas", label: "Gas" },
     { key: "water", label: "Water" },
-  ] as const;
+  ];
 
   const vehicleDetails = [
     { label: "Form", value: camper.form },
@@ -26,35 +27,35 @@ export default function Features({ camper, activeTab }: FeaturesProps) {
     { label: "Width", value: camper.width },
     { label: "Height", value: camper.height },
     { label: "Tank", value: camper.tank },
-    { label: "Engine", value: camper.engine },
-    { label: "Transmission", value: camper.transmission },
     { label: "Consumption", value: camper.consumption },
   ];
 
   return (
-    <div>
-      <h3>Features</h3>
+    <div className={css.featuresContainer}>
+      <div className={css.featuresElementsCont}>
+        {booleanFeatures
+          .filter((f) => camper[f.key])
+          .map((f) => (
+            <div key={f.key} className={css.featuresElements}>
+              <svg width={20} height={20} className={css.featuresIcons}>
+                <use href={`/icons.svg#${icons[f.key]}`} />
+              </svg>
+              <p className={css.featuresLabel}>{f.label}</p>
+            </div>
+          ))}
+      </div>
 
-      {booleanFeatures
-        .filter(f => camper[f.key])
-        .map(f => (
-          <div key={f.key}>
-            <svg width={20} height={20}>
-              <use href={`/icons.svg#${icons[f.key]}`} />
-            </svg>
-            <span>{f.label}</span>
-          </div>
-        ))}
-
-      <h3>Vehicle Details</h3>
-
-      <div>
-        {vehicleDetails.map(item => (
-          <div key={item.label}>
-            <span>{item.label}</span>
-            <span>{item.value}</span>
-          </div>
-        ))}
+      <div className={css.featuresDetails}>
+        <h3 className={css.featuresTitle}>Vehicle Details</h3>
+        <div className={css.line}></div>
+        <div className={css.detailsElements}>
+          {vehicleDetails.map((item) => (
+            <div key={item.label} className={css.vehicleDetails}>
+              <p className={css.vehicleText}>{item.label}</p>
+              <p className={css.vehicleText}>{item.value}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

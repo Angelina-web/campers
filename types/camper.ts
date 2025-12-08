@@ -35,3 +35,24 @@ export interface Review {
   reviewer_rating: number;
   comment: string;
 }
+
+export type EquipmentKey = "AC" | "automatic" | "kitchen" | "TV" | "bathroom";
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  total: number;
+  page: number;
+  limit: number;
+  hasMore: boolean;
+}
+
+export interface CamperDetailsPageProps {
+  id: string;
+}
+
+export interface CampersApiResponse {
+  total: number;
+  items: Camper[];
+}
+
+export type CamperApiResponse = Camper[] | { items: Camper[] };
