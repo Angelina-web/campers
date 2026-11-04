@@ -1,12 +1,5 @@
-'use client';
-
-import css from './Loading.module.css';
+import Loader from "@/components/Loader/Loader";
 
 export default function Loading() {
-  return (
-    <div className={css.wrapper}>
-      <div className={css.loader}></div>
-      <p className={css.text}>Завантаження...</p>
-    </div>
-  );
+  return <Loader />;
 }

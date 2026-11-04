@@ -1,20 +1,5 @@
-"use client";
-import CamperList from "@/components/CamperList/CamperList";
-import Filters from "@/components/Filter/Filter";
-import useCamperStore from '@/lib/store/campers';
+import CatalogView from "@/components/CatalogView/CatalogView";
 
 export default function CatalogPage() {
-  const { campers}= useCamperStore()
-  return (
-    <main>
-      <div className="container">
-        <div>
-          <Filters />
-        </div>
-        <div>
-          <CamperList campers={campers}/>
-        </div>
-      </div>
-    </main>
-  );
+  return <CatalogView />;
 }

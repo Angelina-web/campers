@@ -1,57 +1,77 @@
-export type Camper = {
+export type CamperForm = "alcove" | "panel_van" | "integrated" | "semi_integrated";
+export type Transmission = "automatic" | "manual";
+export type Engine = "diesel" | "petrol" | "hybrid" | "electric";
+export type Amenity =
+  | "ac" | "bathroom" | "kitchen" | "tv" | "radio"
+  | "refrigerator" | "microwave" | "gas" | "water";
+
+export interface Camper {
   id: string;
   name: string;
   price: number;
   rating: number;
   location: string;
   description: string;
-  transmission: "manual" | "automatic";
-  engine: string;
-  form: "alcove" | "panelTruck" | "fullyIntegrated";
+  form: CamperForm;
   length: string;
   width: string;
   height: string;
   tank: string;
   consumption: string;
-  AC: boolean;
-  TV: boolean;
-  kitchen: boolean;
-  radio: boolean;
-  refrigerator: boolean;
-  microwave: boolean;
-  gas: boolean;
-  water: boolean;
-  gallery: GalleryItem[];
-  reviews: Review[];
-};
+  transmission: Transmission;
+  engine: Engine;
+  amenities: Amenity[];
+  coverImage: string;
+  totalReviews: number;
+}
 
-export interface GalleryItem {
+export interface CampersResponse {
+  page: number;
+  perPage: number;
+  total: number;
+  totalPages: number;
+  campers: Camper[];
+}
+
+export interface FiltersResponse {
+  forms: CamperForm[];
+  transmissions: Transmission[];
+  engines: Engine[];
+}
+
+export interface CampersFilters {
+  location?: string;
+  form?: CamperForm;
+  transmission?: Transmission;
+  engine?: Engine;
+}
+
+export interface CampersParams extends CampersFilters {
+  page?: number;
+  perPage?: number;
+}
+
+export interface GalleryImage {
+  id: string;
+  camperId: string;
   thumb: string;
   original: string;
+  order: number;
+}
+export interface CamperDetails extends Omit<Camper, "coverImage"> {
+  gallery: GalleryImage[];
 }
 
 export interface Review {
+  id: string;
+  camperId: string;
   reviewer_name: string;
   reviewer_rating: number;
   comment: string;
+  createdAt: string;
 }
 
-export type Equipment = {
-  type:
-    | "AC"
-    | "bathroom"
-    | "kitchen"
-    | "TV"
-    | "radio"
-    | "refrigerator"
-    | "microwave"
-    | "gas"
-    | "water";
-  engine: "petrol" | "diesel" | "hybrid";
-  transmission: "automatic" | "manual";
-};
-
-export type FilterOptions = {
-  equipment: "AC" | "bathroom" | "kitchen" | "TV" | "automatic" | "manual";
-  type: "panelTruck" | "FullyIntegrated" | "Alcove";
-};
+export interface BookingRequest {
+  name: string;
+  email: string;
+}

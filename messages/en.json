@@ -1,0 +1,126 @@
+{
+  "Header": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "favorites": "Favorites",
+    "homeLink": "TravelTrucks, home",
+    "mainNav": "Main navigation",
+    "language": "Language",
+    "toggleTheme": "Toggle light/dark theme"
+  },
+  "Hero": {
+    "title": "Campers of your dreams",
+    "subtitle": "You can find everything you want in our catalog",
+    "cta": "View Now"
+  },
+  "Options": {
+  "form": {
+    "alcove": "Alcove",
+"panel_van": "Panel Van",
+"integrated": "Integrated",
+"semi_integrated": "Semi Integrated"
+  },
+  "transmission": {
+    "automatic": "Automatic",
+    "manual": "Manual"
+  },
+  "engine": {
+    "diesel": "Diesel",
+    "petrol": "Petrol",
+    "hybrid": "Hybrid",
+    "electric": "Electric"
+  },
+  "amenity": {
+    "ac": "AC",
+    "bathroom": "Bathroom",
+    "kitchen": "Kitchen",
+    "tv": "TV",
+    "radio": "Radio",
+    "refrigerator": "Refrigerator",
+    "microwave": "Microwave",
+    "gas": "Gas",
+    "water": "Water"
+  }
+},
+"Catalog": {
+  "showMore": "Show more",
+  "loadMore": "Load more",
+  "loading": "Loading...",
+  "error": "Something went wrong. Please try again.",
+  "empty": "No campers found",
+  "reviews": "{count, plural, one {# Review} other {# Reviews}}"
+},
+"Filters": {
+  "location": "Location",
+  "locationPlaceholder": "Kyiv",
+  "title": "Filters",
+  "form": "Camper form",
+  "engine": "Engine",
+  "transmission": "Transmission",
+  "search": "Search",
+  "clear": "Clear filters"
+},
+"Loader": {
+  "title": "Loading tracks...",
+  "text": "Please wait while we fetch the best travel trucks for you"
+},
+"Empty": {
+  "title": "No campers found",
+  "text": "We couldn't find any campers that match your filters. Try adjusting your search or clearing some filters.",
+  "clear": "Clear filters",
+  "viewAll": "View all campers"
+},
+"NotFound": {
+  "title": "Page not found",
+  "text": "Sorry, the page you are looking for doesn't exist or has been moved.",
+  "home": "Back to home",
+  "catalog": "Browse catalog"
+},
+"Error": {
+  "title": "Something went wrong",
+  "text": "We couldn't load this page. Please try again or come back a bit later.",
+  "retry": "Try again",
+  "home": "Back to home"
+},
+"Camper": {
+  "vehicleDetails": "Vehicle details",
+  "form": "Form",
+  "length": "Length",
+  "width": "Width",
+  "height": "Height",
+  "tank": "Tank",
+  "consumption": "Consumption",
+  "reviews": "Reviews",
+  "noReviews": "No reviews yet",
+  "reviewsError": "Couldn't load reviews",
+  "loadError": "Couldn't load this camper. Please try again.",
+  "bookTitle": "Book your campervan now",
+  "bookText": "Stay connected! We are always ready to help you.",
+  "name": "Name*",
+  "email": "Email*",
+  "send": "Send",
+  "sending": "Sending...",
+  "required": "This field is required",
+  "invalidEmail": "Enter a valid email",
+  "success": "Your booking request has been sent!",
+  "bookError": "Couldn't send the request. Please try again.",
+  "nameError": "Please enter your name.",
+"emailError": "Please enter your email."
+},
+"Favorites": {
+  "add": "Add to favorites",
+  "remove": "Remove from favorites"
+},
+"Footer": {
+  "contacts": "Contacts",
+  "madeBy": "Developed by",
+  "rights": "All rights reserved.",
+  "toTop": "Back to top"
+},
+"FavoritesPage": {
+  "title": "Favorites",
+  "emptyTitle": "No favorites yet",
+  "emptyText": "Tap the heart on a camper to save it here.",
+  "browse": "Browse catalog"
+}
+}

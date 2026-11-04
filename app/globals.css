@@ -1,4 +1,9 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --background: #fff;
   --main: #101828;
   --text: #475467;
   --white: #fff;
@@ -6,24 +11,75 @@
   --badges: #f2f4f7;
   --gray: #6c717b;
   --gray-light: #dadde1;
-  --button: #e44848;
-  --button-hover: #d84343;
+  --button: #829B91;
+  --button-hover: #6D7B75;
   --rating: #ffc531;
-  --font-family: "Inter", sans-serif;
+ }
+
+ .dark {
+  --background: #291100;
+  --main:  #f7f7f7;
+  --text: #c4cad6;
+  --inputs: #522200;
+  --badges: #DB884C;
+  --gray: #ddd2ca;
+  --gray-light: #ece4de;
+  --button: #CC5500;
+  --button-hover: #FB9B50;
+}
+
+@theme inline {
+   --color-background: var(--background);
+  --color-main: var(--main);
+   --color-text: var(--text);
+  --color-inputs: var(--inputs);
+  --color-white: var(--white);
+  --color-badges: var(--badges);
+   --color-gray: var(--gray);
+    --color-gray-light: var(--gray-light);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-rating: var(--rating);
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+@theme {
+  --animate-van-bounce: van-bounce 0.5s ease-in-out infinite;
+  --animate-road: road 0.5s linear infinite;
+
+  @keyframes van-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes road {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: -32px;
+    }
+  }
 }
 
 body {
-  background: var(--white);
+  background: var(--background);
   color: var(--main);
-  font-family: var(--font-family);
 }
-
-.container {
-  max-width: 1440px;
-  padding: 0 64px;
+html {
+  scroll-behavior: smooth;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+}
+
+button,
+a {
+ cursor: url('/svg/compass-cursor.svg') 3 2, pointer;
 }

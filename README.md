@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TravelTrucks
 
-## Getting Started
+A camper rental web app: a catalog with filters and "Load more" pagination, a camper details page with a gallery, reviews and a booking form, a favorites list, light and dark themes, and two interface languages (EN / UA).
 
-First, run the development server:
+**Live demo:** https://your-project.vercel.app
+**Repository:** https://github.com/Angelina-web/campers
+
+## Tech stack
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 4
+- TanStack Query 5 (`useInfiniteQuery`, `useQuery`, `useQueries`, `useMutation`)
+- next-intl for interface translations (the language is stored in a cookie)
+- Zustand (with `persist`) for favorites
+- Formik + Yup for the booking form and validation
+- Swiper for the thumbnail gallery
+- React Toastify for notifications
+- Axios, React Icons
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home: hero banner with a call to action and the View Now button |
+| `/catalog` | Camper catalog: filters and Load more |
+| `/catalog/[camperId]` | Camper details: gallery, specs, reviews, booking form (opens in a new tab) |
+| `/favorites` | Favorite campers |
+| `not-found`, `error` | 404 and error pages |
+
+## Features
+
+- Server-side filtering through query parameters: location (text), body type, engine type, transmission (one option per group).
+- "Load more" pagination: 4 cards at a time, new cards are fetched with the active filters applied.
+- Swiper gallery with thumbnails, five-star rating display in reviews.
+- Booking form with validation, submission to the backend and a success notification.
+- Favorites: a heart button on cards and on the details page, a counter in the header, data kept in `localStorage`.
+- Light and dark themes (the choice is saved, no flash on page load).
+- EN / UA interface through next-intl. Camper names, descriptions and reviews are shown as returned by the backend.
+- Sticky header, "back to top" button, animated loader, empty state for the catalog.
+
+## API
+
+Backend: `https://campers-api.goit.study` (Swagger documentation is available at the same address).
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/campers` | Camper list (`page`, `perPage`, `location`, `form`, `transmission`, `engine`) |
+| GET | `/campers/filters` | Available filter values |
+| GET | `/campers/{camperId}` | Single camper |
+| GET | `/campers/{camperId}/reviews` | Reviews |
+| POST | `/campers/{camperId}/booking-requests` | Booking request (`name`, `email`) |
+
+## Getting started
 
 ```bash
+git clone https://github.com/Angelina-web/campers.git
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # run the production build
+npm run lint    # ESLint
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/            routes, layout, global styles, not-found, error, loading
+components/     UI components (Header, Hero, CamperCard, FiltersPanel, ...)
+i18n/           next-intl configuration
+lib/            API functions, favorites store, helper hooks
+messages/       translation files (en.json, uk.json)
+public/         images and SVG icons
+types/          TypeScript types for API responses
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Аngelina**, full-stack developer
