@@ -2,7 +2,7 @@
 
 A camper rental web app: a catalog with filters and "Load more" pagination, a camper details page with a gallery, reviews and a booking form, a favorites list, light and dark themes, and two interface languages (EN / UA).
 
-**Live demo:** https://your-project.vercel.app
+**Live demo:** https://campers-azure.vercel.app/
 **Repository:** https://github.com/Angelina-web/campers
 
 ## Tech stack
